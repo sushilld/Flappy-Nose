@@ -178,13 +178,12 @@ def start_game():
 
 # Read the player names and scores from the CSV file
 df = pd.read_csv('scores.csv')
-
 # Sort the dataframe by score in descending order to find the highest score
+
 df_sorted = df.sort_values(by=['Score'], ascending=False).head(5).reset_index()
 print(df_sorted)
 highest_name = df_sorted.iloc[0]['Name']
 highest_score = df_sorted.iloc[0]['Score']
-
 # Create the main window
 root = tk.Tk()
 root.title('Nose Job')
